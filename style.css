@@ -1,0 +1,127 @@
+/* ==========================================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Krav margin + padding med extra */
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+/* ==========================================================================
+   2. HEADER & BRANDING (Updated to Flexbox)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between; /* Spreads out title and navigation menu naturally */
+    align-items: center; /* Vertically centers the text, car, and links perfectly */
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex; /* Changed from inline-flex to work cleanly with the header flex */
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 75px;  
+    height: auto;  
+}
+
+.title {
+    font-size: 85px;
+    margin: 0; 
+    color: #4d0101; 
+}
+
+.title .color-two {
+    color: #065504; 
+}
+
+/* ==========================================================================
+   3. NAVIGATION BUTTONS (Cleaned up, no negative margins)
+   ========================================================================== */
+nav {
+    /* Removed display: flex and negative margin-top completely */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px; 
+}
+
+/* User friendly interface. Tydliga knappar för länkar */
+nav ul li a {
+    display: inline-block; 
+    padding: 12px 24px; 
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none; 
+    color: #0f0f0f; 
+    background-color: #f0f0f0; 
+    border: 2px solid #818181; 
+    border-radius: 8px;
+    transition: background-color 0.2s, border-color 0.2s; 
+}
+
+nav ul li a:hover {
+    background-color: #3abe2e31; 
+    border-color: #630505; 
+}
+
+/* ==========================================================================
+   4. MAIN CONTENT LAYOUT
+   ========================================================================== */
+.main-content {
+    position: relative;
+    width: 100%;
+    padding: 0 30px;
+    margin-top: -50px; /* CHANGED from 0px to pull the entire lower section up */
+}
+
+/* --- Left Column: Öppettider Box --- */
+.left-column {
+    display: block;
+    width: fit-content;
+    margin-top: 10px; /* REDUCED from 40px to pull the box higher */
+    margin-left: 95px; 
+}
+
+.opening-hours {
+    width: 400px; 
+    background-color: #fafafa;
+    border: 2px solid #ccc; 
+    border-radius: 12px;
+    padding: 30px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    border-collapse: collapse;
+}
+
+.opening-hours td {
+    padding: 10px 15px; 
+    font-size: 20px; 
+}
+
+/* --- Center Column: Välkommen Text --- */
+.center-column {
+    position: absolute;
+    left: 50%;
+    top: -50px; /* CHANGED from -15px to bring Välkommen right under the car */
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.welcome-text h2 {
+    font-size: 50px; /* Bigger Välkommen size */
+    font-weight: 600;
+    color: #111;
+}
+

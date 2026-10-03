@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <link rel="icon" type="image/png" href="pizza.png">
+    <meta charset="UTF-8">
+    <title>Pizzeria Dalhem</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /*Krav margin + padding med extra*/
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /*HEADER LAYOUT*/
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 75px;  
+            height: auto;  
+        }
+
+        .header-car {
+             width: 300px;
+             height: auto;
+}
+
+
+        .title {
+            font-size: 85px;
+            margin: 0; 
+            color: #4d0101; /*Färg (Pizzeria)*/
+        }
+
+        .title .color-two {
+            color: #065504; /*Färg (Dalhem)*/
+        }
+
+        /*NAVIGATION*/
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px; 
+        }
+
+        nav ul li a {
+            display: inline-block; 
+            padding: 12px 24px; 
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none; 
+            color: #0f0f0f; /*Text färg*/
+            background-color: #f0f0f0; /*Knapp färg*/
+            border: 2px solid #818181; /*Knapp outline*/
+            border-radius: 8px;
+            transition: 0.2s; /*Hover färgbyte inte jobbigt för ögon*/
+        }
+
+        nav ul li a:hover {
+            background-color: #3abe2e31; /*Grön hover färg för att matcha pizzeria dalhem text logga*/
+            border-color: #630505; /*Matchar också text logga. Kontrast med grön*/
+        }
+
+        /*MAIN CONTENT & ALIGNMENT*/
+        .main-content {
+            position: relative;
+            width: 100%;
+            padding: 0 30px;
+        }
+
+        .left-column {
+            width: fit-content;
+            margin-top: 40px;
+            margin-left: 95px; /* Pushes it right to align perfectly under the text banner */
+        }
+
+        .opening-hours {
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            padding: 30px; 
+            background-color: #fafafa;
+            width: 400px; 
+            border-collapse: collapse;
+        }
+
+        .opening-hours thead tr:first-child td {
+            font-size: 32px; 
+            font-weight: bold;
+            text-align: center; 
+            padding-bottom: 25px; 
+        }
+
+        .opening-hours td {
+            padding: 10px 15px; 
+            font-size: 20px; 
+        }
+
+        .center-column {
+            position: absolute;
+            left: 50%;
+            top: 15px;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .welcome-text h2 {
+            font-size: 64px; 
+            font-weight: 800;
+            color: #111;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://cdn.discordapp.com/attachments/1064273874826559528/1555989924342267954/Illustration_20261003.png?ex=6ac2880a&is=6ac1368a&hm=a9c3e9cedb883f13fdf319cf255235031e16ac3e6345f27129e883d2f39bd1d8&" alt="Pizza logotyp" class="logo-img">
+            <h1 class="title">Pizzeria <span class="color-two">Dalhem</span></h1>
+        </div>
+ <img src="car.png" alt="Delivery van" class="header-car">
+        <nav>
+            <ul>
+                <li><a href="#">Hem</a></li>
+                <li><a href="#">Meny</a></li>
+                <li><a href="#">Boka bord</a></li>
+                <li><a href="#">Kontakta oss</a></li>
+                <li><a href="#">Om oss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="left-column">
+            <table class="opening-hours">
+                <thead>
+                    <tr>
+                        <td colspan="2">-Öppettider-</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mån</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Tis</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Ons</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Tors</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Fre</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Lör</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sön</td>
+                        <td>11:00-21:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="center-column" style="margin-top: -120px !important;">
+    <section class="welcome-text">
+        <h2>-Välkommen-</h2>
+        <h3>
+            Gratis hemkörning gäller i hela Helsignborg stad när man beställer minst <b>två</b> maträtter! <br>
+            Betala med kort, Swish eller kontant!
+        __________________________________________________________________________________
+        </h3>
+        <h2>-Deals/Nyheter</h2>
+        <h3>
+              Vid köp av en <b>familjepizza</b> eller <b>fyra maträtter</b> ingår 1 stor läsk! <em>(Gäller <b>inte</b> hemkörning!)</em> <br>
+
+        </h3>
+    </section>
+</div>
+
+    </main>
+
+</body>
+</html>
