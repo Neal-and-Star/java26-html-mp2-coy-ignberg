@@ -1,6 +1,7 @@
 /* ==========================================================================
-   1. RESET & GLOBAL STYLES
+   1. Global
    ========================================================================== */
+   
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +11,13 @@
 body {
     font-family: sans-serif;
     width: 100%;
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    overflow-x: hidden;
 }
 
-/* ==========================================================================
-   2. HEADER & BRANDING (Updated to Flexbox)
-   ========================================================================== */
+/*==========================================================================
+   2. Header + logo
+   ==========================================================================*/
+
 header {
     display: flex;
     justify-content: space-between; /* Spreads out title and navigation menu naturally */
@@ -45,9 +47,10 @@ header {
     color: #065504; 
 }
 
-/* ==========================================================================
-   3. NAVIGATION BUTTONS (Cleaned up, no negative margins)
-   ========================================================================== */
+/*==========================================================================
+   3. NAV
+   ==========================================================================*/
+
 nav {
     /* Removed display: flex and negative margin-top completely */
 }
@@ -58,7 +61,7 @@ nav ul {
     gap: 15px; 
 }
 
-/* User friendly interface. Tydliga knappar för länkar */
+/*User friendly interface. Tydliga knappar för länkar*/
 nav ul li a {
     display: inline-block; 
     padding: 12px 24px; 
@@ -77,9 +80,10 @@ nav ul li a:hover {
     border-color: #630505; 
 }
 
-/* ==========================================================================
+/*==========================================================================
    4. MAIN CONTENT LAYOUT
-   ========================================================================== */
+   ==========================================================================*/
+
 .main-content {
     position: relative;
     width: 100%;
@@ -87,11 +91,10 @@ nav ul li a:hover {
     margin-top: -50px; /* CHANGED from 0px to pull the entire lower section up */
 }
 
-/* --- Left Column: Öppettider Box --- */
 .left-column {
     display: block;
     width: fit-content;
-    margin-top: 10px; /* REDUCED from 40px to pull the box higher */
+    margin-top: 10px; 
     margin-left: 95px; 
 }
 
@@ -101,7 +104,6 @@ nav ul li a:hover {
     border: 2px solid #ccc; 
     border-radius: 12px;
     padding: 30px; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     border-collapse: collapse;
 }
 
@@ -110,18 +112,80 @@ nav ul li a:hover {
     font-size: 20px; 
 }
 
-/* --- Center Column: Välkommen Text --- */
 .center-column {
     position: absolute;
     left: 50%;
-    top: -50px; /* CHANGED from -15px to bring Välkommen right under the car */
+    top: -50px; 
     transform: translateX(-50%);
     text-align: center;
 }
 
 .welcome-text h2 {
-    font-size: 50px; /* Bigger Välkommen size */
+    font-size: 50px; 
     font-weight: 600;
     color: #111;
 }
 
+.right-column {
+    display: block;
+    width: fit-content;
+    margin-top: 10px; 
+    margin-left: 95px; 
+}
+
+/* ==========================================================================
+   About us CSS
+   ========================================================================== */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    position: fixed; /* Keeps the navbar pinned at the top like modern sites */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo Design Elements */
+.logo a {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #cc2a2a; /* Crimson Red matching 'Pizzeria' */
+}
+
+.logo .highlight {
+    color: #2da142; /* Green matching 'Dalhem' */
+}
+
+/* Nav Menu Alignment */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555555;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+/* Interactive Hover States */
+.main-nav a:hover {
+    color: #cc2a2a;
+}
+
+/* Body Offset Adjustment */
+body {
+    padding-top: 100px; /* Pushes content down so the fixed navbar doesn't cover it */
+}
