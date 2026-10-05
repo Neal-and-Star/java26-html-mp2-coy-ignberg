@@ -1,20 +1,264 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boka bord</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Boka bord - Pizzeria Dalhem</title>
+    <link rel="stylesheet" href="style/style.css">    
+
+    <style>
+        .booking-container {
+            max-width: 700px;
+            margin: 80px auto 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .calendar-header {
+            font-size: 36px;
+            text-align: center;
+            color: #4d0101;
+            margin-bottom: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .weekday-label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #555;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 8px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .calendar-day:hover {
+            background-color: #3abe2e31;
+            border-color: #065504;
+        }
+
+        .calendar-day.empty {
+            background-color: transparent;
+            border: none;
+            cursor: default;
+        }
+
+        .day-status {
+            font-size: 11px;
+            font-weight: normal;
+            color: #065504;
+            margin-top: auto;
+            align-self: center;
+        }
+
+        /* ==========================================================================
+           Assignment Form Rules (Built with flex layout structure)
+           ========================================================================== */
+        .booking-form {
+            border-top: 2px solid #f0f0f0;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-heading {
+            font-size: 26px;
+            color: #4d0101;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-family: sans-serif;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #065504;
+        }
+
+        /* Responsive horizontal grouping for Date and Time on wider screens */
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0f0f0f;
+            background-color: #f0f0f0;
+            border: 2px solid #818181;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #3abe2e31;
+            border-color: #630505;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-   <nav>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/pizza.png" alt="Pizza logotyp" class="logo-img">
+            <!-- Restored unified global text formatting line -->
+            <h1 class="title">Pizzeria <span class="color-two">Dalhem</span></h1>
+        </div>
+        <img src="images/car.png" alt="Delivery van" class="header-car">
+        <nav>
             <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="menu.html">Meny</a></li>
-                <li><a href="tablebooking.html">Boka bord</a></li>
+                <!-- Flagged with active-page class token -->
+                <li><a href="tablebooking.html" class="active-page">Boka bord</a></li>
                 <li><a href="contact.html">Kontakta oss</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
-</body>
-</html>
+    </header>
+
+    <main>
+        <section class="booking-container">
+            <div class="calendar-header">- Oktober -</div>
+            
+            <div class="calendar-grid">
+                <!-- Weekdays-->
+                <div class="weekday-label">Mån</div>
+                <div class="weekday-label">Tis</div>
+                <div class="weekday-label">Ons</div>
+                <div class="weekday-label">Tor</div>
+                <div class="weekday-label">Fre</div>
+                <div class="weekday-label">Lör</div>
+                <div class="weekday-label">Sön</div>
+
+                <div class="calendar-day">1 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">2 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">3 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">4 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">5 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">6 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">7 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">8 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">9 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">10 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">11 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">12 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">13 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">14 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">15 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">16 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">17 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">18 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">19 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">20 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">21 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">22 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">23 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">24 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">25 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">26 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">27 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">28 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">29 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">30 <span class="day-status">Ledigt</span></div>
+                <div class="calendar-day">31 <span class="day-status">Ledigt</span></div>
+            </div>
+
+            <!-- MANDATORY INPUT BOOKING FORM BLOCK -->
+            <form class="booking-form" action="#" method="POST">
+                <h3 class="form-heading">Skicka bokningsförfrågan</h3>
+                
+                <!-- Input field: Namn -->
+                <div class="form-group">
+                    <label for="booking-name">Namn</label>
+                    <input type="text" id="booking-name" name="name" placeholder="Ditt fullständiga namn" required>
+                </div>
+
+                <div class="form-row">
+                    <!-- Input field: Datum -->
+                    <div class="form-group">
+                        <label for="booking-date">Datum</label>
+                        <input type="date" id="booking-date" name="date" required>
+                    </div>
+
+                    <!-- Input field: Tid -->
+                    <div class="form-group">
+                        <label for="booking-time">Tid</label>
+                        <input type="time" id="booking-time" name="time" required>
+                    </div>
+                </div>
+
+        <div class="form-group">
+          <label for="booking-notes">Övriga önskemål (valfritt)</label>
+         <textarea id="booking-notes" name="notes" rows="4" placeholder="T.ex. barnstol eller allergier..."></textarea>
+        </div>

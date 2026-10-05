@@ -1,0 +1,339 @@
+/* ==========================================================================
+   0. CSS Variables
+   ========================================================================== */
+:root {
+    --main-red: #4d0101;
+    --main-green: #065504;
+    --hover-green: #3abe2e31;
+    --dark-border: #630505;
+    --light-bg: #fafafa;
+    --text-dark: #0f0f0f;
+    --border-gray: #818181;
+    
+    --header-padding: 20px 30px;
+    --content-padding: 0 30px;
+    --container-padding: 25px;
+    --footer-padding: 30px 40px;
+}
+
+/* ==========================================================================
+   1. Global Resets
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-image: url('../background.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   2. Header & Centered Navigation Car
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: var(--header-padding); 
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.logo-container {
+    display: flex; 
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 75px;  
+    height: auto;  
+}
+
+.title {
+    font-size: 55px; 
+    margin: 0; 
+    color: var(--main-red); 
+}
+
+.title .color-two {
+    color: var(--main-green); 
+}
+
+.header-car {
+    width: 260px;
+    height: auto;
+    position: absolute; 
+    left: 50%;          
+    top: 50%;           
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+/* ==========================================================================
+   3. Navigation Button Bar
+   ========================================================================== */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 12px; 
+}
+
+nav ul li a {
+    display: inline-block; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; 
+    color: var(--text-dark); 
+    background-color: #f0f0f0; 
+    border: 2px solid var(--border-gray); 
+    border-radius: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease; 
+}
+
+nav ul li a:hover,
+nav ul li a.active-page {
+    background-color: var(--hover-green); 
+    border-color: var(--dark-border); 
+}
+
+/* ==========================================================================
+   4. Main Content Spacing
+   ========================================================================== */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: var(--content-padding); 
+    gap: 30px;
+}
+
+.left-column {
+    flex: 1;
+    max-width: 400px;
+}
+
+.center-column {
+    flex: 1.5;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.right-column {
+    flex: 1;
+    max-width: 420px;
+}
+
+.opening-hours {
+    width: 100%; 
+    background-color: var(--light-bg);
+    border: 2px solid #ccc; 
+    border-radius: 12px;
+    padding: var(--container-padding); 
+    border-collapse: collapse;
+}
+
+.opening-hours td {
+    padding: 10px 15px; 
+    font-size: 18px; 
+}
+
+.welcome-text h2 {
+    font-size: 42px; 
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.welcome-text h3 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.reviews-box {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ccc;
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: var(--container-padding); 
+}
+
+/* Shared Inner Content Card Layout for Subpages */
+.subpage-card {
+    max-width: 650px;
+    margin: 60px auto 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.subpage-heading {
+    font-size: 36px;
+    color: var(--main-red);
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.subpage-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.app-link {
+    font-weight: bold;
+    text-decoration: none;
+}
+.app-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. Mobile Screen Breakpoint
+   ========================================================================== */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .header-car {
+        position: static !important;
+        transform: none !important;
+        margin: 10px auto;
+        width: 180px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .main-content {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 15px;
+    }
+
+    .left-column, .center-column, .right-column {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   6. Footer Framework Elements
+   ========================================================================== */
+footer {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-top: 2px solid #ccc;
+    padding: var(--footer-padding); 
+    margin-top: 80px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    color: var(--main-red);
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.footer-column p, 
+.footer-column a {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.social-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.social-btn:hover {
+    background-color: var(--hover-green);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eaeaea;
+    font-size: 13px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .footer-socials {
+        justify-content: center;
+    }
+}

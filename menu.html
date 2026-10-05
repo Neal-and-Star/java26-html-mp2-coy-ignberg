@@ -1,20 +1,247 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meny</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meny - Pizzeria Dalhem</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <style>
+        .menu-container {
+            max-width: 600px;
+            margin: 80px auto 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .menu-heading {
+            font-size: 48px;
+            text-align: center;
+            color: #4d0101;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu-items-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item-block {
+            margin-bottom: 35px;
+        }
+
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 20px;
+        }
+
+        .pizza-name {
+            font-weight: bold;
+            color: #111;
+        }
+
+        .price-leader-dots {
+            flex-grow: 1;
+            border-bottom: 2px dotted #bbb;
+            margin: 0 12px;
+            position: relative;
+            top: -5px;
+        }
+
+        .pizza-price {
+            font-weight: bold;
+            color: #065504;
+            white-space: nowrap;
+        }
+
+        .pizza-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            padding-left: 20px;
+            gap: 15px;
+        }
+
+        .pizza-description {
+            font-size: 15px;
+            color: #666;
+            font-style: italic;
+            margin: 0;
+            flex: 1;
+        }
+
+        .pizza-img-box {
+            width: 75px;
+            height: 75px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .pizza-menu-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+       
+        @media (max-width: 480px) {
+            .pizza-details {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                padding-left: 10px;
+                gap: 10px;
+            }
+            .pizza-img-box {
+                width: 65px;
+                height: 65px;
+            }
+        }
+    </style>
 </head>
 <body>
-   <nav>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/pizza.png" alt="Pizza logotyp" class="logo-img">
+            <h1 class="title">Våran <span class="color-two">meny</span></h1>
+        </div>
+        <img src="images/car.png" alt="Delivery van" class="header-car">
+        <nav>
             <ul>
                 <li><a href="index.html">Hem</a></li>
-                <li><a href="menu.html">Meny</a></li>
+                <li><a href="menu.html" class="active-page">Meny</a></li>
                 <li><a href="tablebooking.html">Boka bord</a></li>
                 <li><a href="contact.html">Kontakta oss</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
+    </header>
+
+    <main>
+        <section class="menu-container">
+            <h2 class="menu-heading">- Pizza -</h2>
+            <ul class="menu-items-list">
+                
+                <li class="menu-item-block">
+                    <div class="menu-row">
+                        <span class="pizza-name">1. Margarita</span>
+                        <span class="price-leader-dots"></span>
+                        <span class="pizza-price">120:-</span>
+                    </div>
+                    <div class="pizza-details">
+                        <p class="pizza-description">Tomatsås, ost</p>
+                        <div class="pizza-img-box">
+                            <img src="images/margareta.png" alt="Margarita pizza" class="pizza-menu-img">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item-block">
+                    <div class="menu-row">
+                        <span class="pizza-name">2. Vesuvio</span>
+                        <span class="price-leader-dots"></span>
+                        <span class="pizza-price">125:-</span>
+                    </div>
+                    <div class="pizza-details">
+                        <p class="pizza-description">Oxpålägg</p>
+                        <div class="pizza-img-box">
+                            <img src="images/vesuvio.png" alt="Vesuvio pizza" class="pizza-menu-img">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item-block">
+                    <div class="menu-row">
+                        <span class="pizza-name">3. Funghi</span>
+                        <span class="price-leader-dots"></span>
+                        <span class="pizza-price">125:-</span>
+                    </div>
+                    <div class="pizza-details">
+                        <p class="pizza-description">Champinjoner</p>
+                        <div class="pizza-img-box">
+                            <img src="images/funghi.png" alt="Funghi pizza" class="pizza-menu-img">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item-block">
+                    <div class="menu-row">
+                        <span class="pizza-name">4. Hawaii</span>
+                        <span class="price-leader-dots"></span>
+                        <span class="pizza-price">130:-</span>
+                    </div>
+                    <div class="pizza-details">
+                        <p class="pizza-description">Oxpålägg, ananas</p>
+                        <div class="pizza-img-box">
+                            <img src="images/hawaii.png" alt="Hawaii pizza" class="pizza-menu-img">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item-block">
+                    <div class="menu-row">
+                        <span class="pizza-name">5. Capricciosa</span>
+                        <span class="price-leader-dots"></span>
+                        <span class="pizza-price">130:-</span>
+                    </div>
+                    <div class="pizza-details">
+                        <p class="pizza-description">Oxpålägg, svamp</p>
+                        <div class="pizza-img-box">
+                            <img src="images/capricciosa.png" alt="Capricciosa pizza" class="pizza-menu-img">
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Hitta hit</h4>
+                <p>
+                    Dalhemsvägen 71,<br>
+                    254 65 Helsingborg
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Kontakta oss</h4>
+                <p>
+                    Telefon: <a href="tel:042155590" style="font-weight: bold; color: #4d0101;">042 - 15 55 90</a><br>
+                    E-post: <a href="mailto:info@pizzeriadalhem.se" style="font-weight: bold; color: #065504;">info@pizzeriadalhem.se</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Följ oss</h4>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/pizzeriadalhem/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #3b5998;">Facebook</a>
+                    <a href="https://www.instagram.com/dalhems_pizzeria/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #e1306c;">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2022 Pizzeria Dalhem</p>
+        </div>
+    </footer>
+
 </body>
 </html>

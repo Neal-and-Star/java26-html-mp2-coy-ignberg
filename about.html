@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="sv">
-    
 <head>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om oss</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Om oss - Pizzeria Dalhem</title>
+    <link rel="stylesheet" href="style/style.css">
+    
+    <style>
+        .page-container {
+            max-width: 600px;
+            margin: 60px auto 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .page-heading {
+            font-size: 48px;
+            color: #4d0101;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .page-text {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-   <nav>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/pizza.png" alt="Pizza logotyp" class="logo-img">
+            <h1 class="title">Om <span class="color-two">oss</span></h1>
+        </div>
+        <img src="images/car.png" alt="Delivery van" class="header-car">
+        <nav>
             <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="menu.html">Meny</a></li>
@@ -17,5 +48,51 @@
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
+    </header>
+
+    <main>
+        <section class="page-container">
+            <h2 class="page-heading">- Om oss -</h2>
+            <p class="page-text">
+                Måste lägga till nåt här  
+            </p>
+        </section>
+    </main>
+
+      <footer>
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h4>Hitta hit</h4>
+                <p>
+                    Dalhemsvägen 71,<br>
+                    254 65 Helsingborg
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Kontakta oss</h4>
+                <p>
+                    Telefon: <a href="tel:042155590" style="font-weight: bold; color: #4d0101;">042 - 15 55 90</a><br>
+                    E-post: <a href="mailto:info@pizzeriadalhem.se" style="font-weight: bold; color: #065504;">info@pizzeriadalhem.se</a>
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Följ oss</h4>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/pizzeriadalhem/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #3b5998;">Facebook</a>
+                    <a href="https://www.instagram.com/dalhems_pizzeria/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #e1306c;">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2022 Pizzeria Dalhem</p>
+        </div>
+    </footer>
+
+
 </body>
 </html>

@@ -1,147 +1,25 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pizza, pizzeria, dalhem, helsingborg, boka bord, restaurang">
     <title>Pizzeria Dalhem</title>
-    <style>
-       
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; /*Krav margin + padding med extra*/
-        }
-
-        body {
-            font-family: sans-serif;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        /*HEADER LAYOUT*/
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 30px;
-            width: 100%;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            width: 75px;  
-            height: auto;  
-        }
-
-        .header-car {
-             width: 300px;
-             height: auto;
-}
-
-
-        .title {
-            font-size: 85px;
-            margin: 0; 
-            color: #4d0101; /*Färg (Pizzeria)*/
-        }
-
-        .title .color-two {
-            color: #065504; /*Färg (Dalhem)*/
-        }
-
-        /*NAVIGATION*/
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            gap: 15px; 
-        }
-
-        nav ul li a {
-            display: inline-block; 
-            padding: 12px 24px; 
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none; 
-            color: #0f0f0f; /*Text färg*/
-            background-color: #f0f0f0; /*Knapp färg*/
-            border: 2px solid #818181; /*Knapp outline*/
-            border-radius: 8px;
-            transition: 0.2s; /*Hover färgbyte inte jobbigt för ögon*/
-        }
-
-        nav ul li a:hover {
-            background-color: #3abe2e31; /*Grön hover färg för att matcha pizzeria dalhem text logga*/
-            border-color: #630505; /*Matchar också text logga. Kontrast med grön*/
-        }
-
-        /*MAIN CONTENT & ALIGNMENT*/
-        .main-content {
-            position: relative;
-            width: 100%;
-            padding: 0 30px;
-        }
-
-        .left-column {
-            width: fit-content;
-            margin-top: 40px;
-            margin-left: 95px; /* Pushes it right to align perfectly under the text banner */
-        }
-
-        .opening-hours {
-            border: 2px solid #ccc;
-            border-radius: 12px;
-            padding: 30px; 
-            background-color: #fafafa;
-            width: 400px; 
-            border-collapse: collapse;
-        }
-
-        .opening-hours thead tr:first-child td {
-            font-size: 32px; 
-            font-weight: bold;
-            text-align: center; 
-            padding-bottom: 25px; 
-        }
-
-        .opening-hours td {
-            padding: 10px 15px; 
-            font-size: 20px; 
-        }
-
-        .center-column {
-            position: absolute;
-            left: 50%;
-            top: 15px;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-
-        .welcome-text h2 {
-            font-size: 64px; 
-            font-weight: 800;
-            color: #111;
-            margin: 0;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="https://cdn.discordapp.com/attachments/1064273874826559528/1555989924342267954/Illustration_20261003.png?ex=6ac2880a&is=6ac1368a&hm=a9c3e9cedb883f13fdf319cf255235031e16ac3e6345f27129e883d2f39bd1d8&" alt="Pizza logotyp" class="logo-img">
+            <img src="images/pizza.png" alt="Pizza logotyp" class="logo-img">
             <h1 class="title">Pizzeria <span class="color-two">Dalhem</span></h1>
         </div>
- <img src="car.png" alt="Delivery van" class="header-car">
+        <img src="images/car.png" alt="Delivery van" class="header-car">
         <nav>
             <ul>
-                <li><a href="index.html">Hem</a></li>
+                <li><a href="index.html" class="active-page">Hem</a></li>
                 <li><a href="menu.html">Meny</a></li>
                 <li><a href="tablebooking.html">Boka bord</a></li>
                 <li><a href="contact.html">Kontakta oss</a></li>
@@ -151,101 +29,122 @@
     </header>
 
     <main class="main-content">
+        
         <div class="left-column">
+            
+            <div style="background-color: var(--light-bg); border: 2px solid #ccc; border-radius: 12px; padding: var(--container-padding); margin-bottom: 25px; text-align: center;">
+                <h2 style="font-size: 24px; font-weight: bold; color: var(--main-red); margin-bottom: 10px;">- Information -</h2>
+                <p style="font-size: 16px; line-height: 1.5; color: #333; text-align: left;">
+                    Välkommen till Pizzeria Dalhem! Våra öppetider och meny finner ni på sidan, samt våra smaskiga deals och nyheter! Kom gärna in till oss Dalhemsvägen 71, 254 65 Helsingborg. Eller ring 042155590 för att lägga en beställning för upphämtning eller hemkörning! 
+                </p>
+            </div>
+
             <table class="opening-hours">
                 <thead>
                     <tr>
-                        <td colspan="2">-Öppettider-</td>
+                        <td colspan="2" style="font-size: 28px; font-weight: bold; text-align: center; padding-bottom: 20px;">-Öppettider-</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Mån</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Tis</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Ons</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Tors</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Fre</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Lör</td>
-                        <td>11:00-21:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sön</td>
-                        <td>11:00-21:00</td>
-                    </tr>
+                    <tr><td>Mån</td><td>11:00-21:00</td></tr>
+                    <tr><td>Tis</td><td>11:00-21:00</td></tr>
+                    <tr><td>Ons</td><td>11:00-21:00</td></tr>
+                    <tr><td>Tors</td><td>11:00-21:00</td></tr>
+                    <tr><td>Fre</td><td>11:00-21:00</td></tr>
+                    <tr><td>Lör</td><td>11:00-21:00</td></tr>
+                    <tr><td>Sön</td><td>11:00-21:00</td></tr>
                 </tbody>
             </table>
         </div>
 
-    <div class="right-column" style="position: absolute; top: -100px; right: 150px; width: 220px; border: 1px solid #ccc; background: #fff;">
-    <table style="width: 100%; border-collapse: collapse; text-align: center;">
-        <thead>
-            <tr>
-                <th style="padding: 10px; font-weight: normal; border-bottom: 1px solid #ccc;">
-                    <b>-Betyg: 4.0 ★★★★☆-</b>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 15px; vertical-align: top; text-align: left;">
-                @User 1 - 3 years ago <br>
-                ___________________<br>
-                <br>
-                The Helsingborgspecial pizza is good, and the price is ok. Kitchen looks clean and tidy.<br>
-                Food: 4/5  |  Service: 5/5  |  Atmosphere: 5/5
+        <div class="center-column">
+            <section class="welcome-text">
+                <h2>-Välkommen-</h2>
+                <h3>
+                    Gratis hemkörning gäller i hela Helsingborg stad när man beställer minst <b>två</b> maträtter! <br>
+                    Betala med kort, Swish eller kontant!
+                </h3>
+                
+                <h2>-Deals/Nyheter-</h2>
+                <h3>
+                    Vid köp av en <b>familjepizza</b> eller <b>fyra maträtter</b> ingår 1 stor läsk! <br>
+                    <span style="font-size: 14px; color: #750404; font-style: italic;">(Gäller inte hemkörning!)</span>
+                </h3>
+                
+                <div style="margin-top: 30px;">
+                    <h2 style="font-size: 40px; font-weight: bold; color: #000000; margin-bottom: 5px;"><b>-Dagens lunch-</b></h2>
+                    <h3 style="font-weight: normal; font-size: 22px; line-height: 1.6; max-width: 500px; margin: 0 auto;">
+                        Välj mellan lunchpaket 1 eller 2<br>
+                        Vardagar 11:00 - 14:00<br>
+                        <span style="font-size: 18px; color: #555;">Inkl. Dryck, sallad, kaffe & te.</span>
+                    </h3>
+                </div>
+            </section>
+        </div>
 
-                <b>____________________</b><br>
-                <br>
-                @User2 - 4 months ago<br>
-                 ___________________<br>
-                 <br>
-
-                After ordering takeaway-may from the same place for many years, we decided to change pizzerias. The last time we had our order delivered, the price did not match what was on their website. We pointed out that the price was not what was on the menu, and their response was: "We have not updated the website".<br>
-                The food cost about 100 SEK more than we had expected.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-        <div class="center-column" style="margin-top: -120px !important;">
-    <section class="welcome-text">
-        <h2>-Välkommen-</h2>
-        <h3>
-            Gratis hemkörning gäller i hela Helsignborg stad när man beställer minst <b>två</b> maträtter! <br>
-            Betala med kort, Swish eller kontant!
-        __________________________________________________________________________________
-        </h3>
-        <h2>-Deals/Nyheter</h2>
-        <h3>
-              Vid köp av en <b>familjepizza</b> eller <b>fyra maträtter</b> ingår 1 stor läsk! <em>(Gäller <b>inte</b> hemkörning!)</em> <br>
-             <b> Dagens lunch </b> <br>
-            Välj mellan lunchpaket 1 eller 2  <br>
-            Vardagar 11:00 - 14:00 <br>
-            Inkl. Dryck, sallad, kaffe & te. <br>
-        </h3>
-    </section>
-</div>
+        <div class="right-column">
+            <div class="reviews-box">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="padding-bottom: 12px; font-size: 18px; text-align: center; border-bottom: 1px solid #ccc;">
+                                <b>-Betyg: 4.0 ★★★★☆-</b>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-top: 15px; font-size: 14px; line-height: 1.5; text-align: left; vertical-align: top;">
+                                <strong>@User 1 - 3 years ago</strong><br>
+                                <span style="color: #ccc;">_______________________</span><br><br>
+                                The Helsingborgspecial pizza is good, and the price is ok. Kitchen looks clean and tidy.<br>
+                                <span style="font-weight: bold; color: #000000;">Food: 4/5 | Service: 5/5 | Atmosphere: 5/5</span>
+                                <br><br><br>
+                                <strong>@User2 - 4 months ago</strong><br>
+                                <span style="color: #ccc;">_______________________</span><br><br>
+                                After ordering takeaway-may from the same place for many years, we decided to change pizzerias. The last time we had our order delivered, the price did not match what was on their website. We pointed out that the price was not what was on the menu, and their response was: "We have not updated the website".<br>
+                                The food cost about 100 SEK more than we had expected.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 
-    <footer style="width: 100%; text-align: center; display: block; clear: both; margin-top: 179px;">
-        <p>© 2022 Pizzeria Dalhem</p>
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h4>Hitta hit</h4>
+                <p>
+                    Dalhemsvägen 71,<br>
+                    254 65 Helsingborg
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Kontakta oss</h4>
+                <p>
+                    Telefon: <a href="tel:042155590" style="font-weight: bold; color: #4d0101;">042 - 15 55 90</a><br>
+                    E-post: <a href="mailto:info@pizzeriadalhem.se" style="font-weight: bold; color: #065504;">info@pizzeriadalhem.se</a>
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Följ oss</h4>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/pizzeriadalhem/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #3b5998;">Facebook</a>
+                    <a href="https://www.instagram.com/dalhems_pizzeria/" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #e1306c;">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2022 Pizzeria Dalhem</p>
+        </div>
     </footer>
 
 </body>
