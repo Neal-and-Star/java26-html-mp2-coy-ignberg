@@ -145,7 +145,7 @@ nav ul li a:hover {
     background-color: #ffffff;
     border-bottom: 1px solid #f0f0f0;
     width: 100%;
-    position: fixed; /* Keeps the navbar pinned at the top like modern sites */
+    position: fixed; 
     top: 0;
     left: 0;
     z-index: 1000;
@@ -157,14 +157,13 @@ nav ul li a:hover {
     font-weight: 800;
     letter-spacing: 1px;
     text-decoration: none;
-    color: #cc2a2a; /* Crimson Red matching 'Pizzeria' */
+    color: #cc2a2a; 
 }
 
 .logo .highlight {
-    color: #2da142; /* Green matching 'Dalhem' */
+    color: #2da142; 
 }
 
-/* Nav Menu Alignment */
 .main-nav ul {
     display: flex;
     list-style: none;
@@ -180,12 +179,10 @@ nav ul li a:hover {
     transition: color 0.2s ease;
 }
 
-/* Interactive Hover States */
 .main-nav a:hover {
     color: #cc2a2a;
 }
 
-/* Body Offset Adjustment */
 body {
-    padding-top: 100px; /* Pushes content down so the fixed navbar doesn't cover it */
+    padding-top: 100px; 
 }
