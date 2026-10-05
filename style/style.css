@@ -315,6 +315,60 @@ footer {
 @media (max-width: 1024px) {
     header {
         flex-direction: column;
+        gap: 12px;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    /* FIXES THE MOBILE OVERFLOW: Shrinks down text headers so they fit tiny screens */
+    .title {
+        font-size: 32px !important; 
+    }
+    
+    .logo-img {
+        width: 55px !important; /* Makes logo thumbnail slightly smaller on phone views */
+    }
+
+    .header-car {
+        position: static !important; 
+        transform: none !important;
+        margin: 10px auto;
+        width: 150px; 
+    }
+
+    nav ul {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 6px;
+    }
+
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    /* Ensures all page cards stack cleanly underneath each other down the page */
+    .main-content {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 0 10px;
+    }
+
+    .left-column, .center-column, .right-column,
+    .booking-container, .menu-container, .subpage-card {
+        position: static !important;
+        transform: none !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
         gap: 15px;
         padding: 20px 10px;
         text-align: center;
