@@ -81,9 +81,7 @@
             align-self: center;
         }
 
-        /* ==========================================================================
-           Assignment Form Rules (Built with flex layout structure)
-           ========================================================================== */
+        /*Assignment Form Rules (Built with FLEX)*/
         .booking-form {
             border-top: 2px solid #f0f0f0;
             padding-top: 30px;
@@ -129,7 +127,6 @@
             border-color: #065504;
         }
 
-        /* Responsive horizontal grouping for Date and Time on wider screens */
         .form-row {
             display: flex;
             gap: 20px;
@@ -171,15 +168,13 @@
     <header>
         <div class="logo-container">
             <img src="images/pizza.png" alt="Pizza logotyp" class="logo-img">
-            <!-- Restored unified global text formatting line -->
-            <h1 class="title">Pizzeria <span class="color-two">Dalhem</span></h1>
+            <h1 class="title">Boka <span class="color-two">bord</span></h1>
         </div>
         <img src="images/car.png" alt="Delivery van" class="header-car">
         <nav>
             <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="menu.html">Meny</a></li>
-                <!-- Flagged with active-page class token -->
                 <li><a href="tablebooking.html" class="active-page">Boka bord</a></li>
                 <li><a href="contact.html">Kontakta oss</a></li>
                 <li><a href="about.html">Om oss</a></li>
@@ -189,7 +184,7 @@
 
     <main>
         <section class="booking-container">
-            <div class="calendar-header">- Oktober -</div>
+            <div class="calendar-header">-Oktober-</div>
             
             <div class="calendar-grid">
                 <!-- Weekdays-->
@@ -234,31 +229,72 @@
                 <div class="calendar-day">31 <span class="day-status">Ledigt</span></div>
             </div>
 
-            <!-- MANDATORY INPUT BOOKING FORM BLOCK -->
-            <form class="booking-form" action="#" method="POST">
+            <form class="booking-form" action="thankyou.html" method="GET">
                 <h3 class="form-heading">Skicka bokningsförfrågan</h3>
                 
-                <!-- Input field: Namn -->
                 <div class="form-group">
                     <label for="booking-name">Namn</label>
                     <input type="text" id="booking-name" name="name" placeholder="Ditt fullständiga namn" required>
                 </div>
 
                 <div class="form-row">
-                    <!-- Input field: Datum -->
                     <div class="form-group">
                         <label for="booking-date">Datum</label>
                         <input type="date" id="booking-date" name="date" required>
                     </div>
 
-                    <!-- Input field: Tid -->
                     <div class="form-group">
                         <label for="booking-time">Tid</label>
                         <input type="time" id="booking-time" name="time" required>
                     </div>
                 </div>
 
-        <div class="form-group">
-          <label for="booking-notes">Övriga önskemål (valfritt)</label>
-         <textarea id="booking-notes" name="notes" rows="4" placeholder="T.ex. barnstol eller allergier..."></textarea>
+                <div class="form-group">
+                    <label for="booking-notes">Övriga önskemål (valfritt)</label>
+                    <textarea id="booking-notes" name="notes" rows="4" placeholder="T.ex. barnstol eller allergier..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Skicka bokning</button>
+            </form>
+
+        </section> <!-- Closes .booking-container -->
+    </main> <!-- Closes main content layout grid -->
+
+    <!-- Footer container sits outside the elements to stretch completely full-width -->
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h4>Hitta hit</h4>
+                <p>
+                    Dalhemsvägen 71,<br>
+                    254 65 Helsingborg
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Kontakta oss</h4>
+                <p>
+                    Telefon: <a href="tel:042155590" style="font-weight: bold; color: #4d0101;">042 - 15 55 90</a><br>
+                    E-post: <a href="mailto:info@pizzeriadalhem.se" style="font-weight: bold; color: #065504;">info@pizzeriadalhem.se</a>
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Följ oss</h4>
+                <div class="footer-socials">
+                    <!-- Restored your active social links opening in new browser tabs -->
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #3b5998;">Facebook</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" style="color: #e1306c;">Instagram</a>
+                </div>
+            </div>
+
         </div>
+
+        <div class="footer-bottom">
+            <p>© 2022 Pizzeria Dalhem</p>
+        </div>
+    </footer>
+
+</body>
+</html>
